@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  section: MyString
+  Date: 2022-10-18 09:34:48
+  Venue: MyString
+  Oppnent: MyString
+
+two:
+  section: MyString
+  Date: 2022-10-18 09:34:48
+  Venue: MyString
+  Oppnent: MyString
