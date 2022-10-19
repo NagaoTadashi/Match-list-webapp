@@ -1,0 +1,21 @@
+<h1>変更</h1>
+<%= form_with model: @match do |form| %>
+  <p>
+    <%= form.label :節 %>
+    <%= form.text_field :Sec %><br>
+    <%= form.label :日時%>
+    <%= form.text_field :Date %><br>
+    <%= form.label :会場 %>
+    <%= form.text_field :Venue %><br>
+    <%= form.label :対戦チーム %>
+    <%= form.text_field :Oppnent %><br>
+    <% if @match.errors.any? %>
+        <% @match.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+    <% end %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
