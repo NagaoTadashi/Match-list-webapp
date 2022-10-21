@@ -9,6 +9,8 @@
     <%= form.text_field :Venue %><br>
     <%= form.label :対戦チーム %>
     <%= form.text_field :Oppnent %><br>
+    <%= form.label :試合結果 %>
+    <%= form.text_field :Score %><br>
     <% if @match.errors.any? %>
         <% @match.errors.full_messages.each do |message| %>
           <li><%= message %></li>

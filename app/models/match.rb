@@ -3,4 +3,5 @@ class Match < ApplicationRecord
     validates :Date, presence: true
     validates :Venue, presence: true
     validates :Oppnent, presence: true
+    
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_18_093448) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_211551) do
   create_table "matches", force: :cascade do |t|
     t.string "Sec"
     t.string "Date"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_18_093448) do
     t.string "Oppnent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "Score"
   end
 
 end

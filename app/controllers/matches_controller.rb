@@ -30,15 +30,20 @@ class MatchesController < ApplicationController
     end
   end
   
+  def show
+    @match = Match.find(params[:id])
+  end
+  
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
     redirect_to root_path, status: :see_other
   end
   
+  
   private
   def match_params
-    params.require(:match).permit(:Sec,:Date,:Venue,:Oppnent)
+    params.require(:match).permit(:Sec,:Date,:Venue,:Oppnent,:Score)
   end  
   
 end
