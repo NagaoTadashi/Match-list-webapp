@@ -1,5 +1,17 @@
 <h1>試合情報</h1>
+<h2>2022九州大学サッカーリーグ<%= @match.Sec %> vs <%= @match.Oppnent %></h2>
+<p><%= @match.Date %></p>
+<p><%= @match.Venue %></p>
+<p>熊本大学<%= @match.Score %><%= @match.Oppnent %></p>
+<p>STARTING MEMBER</p>
+
+<ul>
+  <% @member.each do | player | %> 
   <li>
-    <%= @match.Score %>
+    <%= player.no %>
+    <%= player.position %>
+    <%= player.name %>
   </li>
+  <% end %>
 </ul>
+
