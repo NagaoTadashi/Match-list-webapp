@@ -32,7 +32,6 @@ class MatchesController < ApplicationController
   
   def show
     @match = Match.find(params[:id])
-    @member = Member.all
   end
   
   def destroy
@@ -44,7 +43,7 @@ class MatchesController < ApplicationController
   
   private
   def match_params
-    params.require(:match).permit(:Sec,:Date,:Venue,:Oppnent,:Score)
+    params.require(:match).permit(:Sec,:Date,:Venue,:Oppnent,:Score,:Starting,:Substitute)
   end  
   
 end

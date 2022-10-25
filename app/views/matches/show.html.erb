@@ -4,14 +4,6 @@
 <p><%= @match.Venue %></p>
 <p>熊本大学<%= @match.Score %><%= @match.Oppnent %></p>
 <p>STARTING MEMBER</p>
-
-<ul>
-  <% @member.each do | player | %> 
-  <li>
-    <%= player.no %>
-    <%= player.position %>
-    <%= player.name %>
-  </li>
-  <% end %>
-</ul>
-
+<p><%= @match.Starting %></p>
+<p>SUBSTITUTE MEMBER</p>
+<p><%= @match.Substitute %></p>
