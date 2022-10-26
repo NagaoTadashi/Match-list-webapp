@@ -1,15 +1,15 @@
 <h1>試合一覧</h1>
 <%= link_to '新規' , new_match_path %>
 <ul>
-  <% @matches.each do | game | %> 
+  <% @matches.each do | games | %> 
   <li>
-    <%= game.Sec %>
-    <%= game.Date %>
-    <%= game.Venue %>
-    <%= game.Oppnent %>
-    <%= link_to '[詳細]',match_path(game) %>
-    <%= link_to '[編集]',edit_match_path(game) %>
-    <%= link_to '[消去]',match_path(game),
+    <%= games.Sec %>
+    <%= games.Date %>
+    <%= games.Venue %>
+    <%= games.Oppnent %>
+    <%= link_to '[詳細]',match_path(games) %>
+    <%= link_to '[編集]',edit_match_path(games) %>
+    <%= link_to '[消去]',match_path(games),
       data: {turbo_method: 'delete',turbo_confirm: 'Are you sure?'} %>
   </li>
   <% end %>

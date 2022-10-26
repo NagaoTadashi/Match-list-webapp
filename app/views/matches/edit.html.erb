@@ -1,89 +1,24 @@
-<h1>変更</h1>
+<h1>編集</h1>
 <%= form_with model: @match do |form| %>
   <p>
-    <%= form.label :節 %>
+    <%= form.label :節 %><br>
     <%= form.text_field :Sec %><br>
-    <%= form.label :日時%>
+    <%= form.label :日時%><br>
     <%= form.text_field :Date %><br>
-    <%= form.label :会場 %>
+    <%= form.label :会場 %><br>
     <%= form.text_field :Venue %><br>
-    <%= form.label :対戦チーム %>
+    <%= form.label :対戦チーム %><br>
     <%= form.text_field :Oppnent %><br>
-    <%= form.label :試合結果 %>
+    <%= form.label :試合結果 %><br>
     <%= form.text_field :Score %><br>
-    <%= form.label :スタメン %>
-    <%= form.select :Starting, 
-                     ['1 GK 江口 太朗', 
-                      '2 DF	山下 拓海', 
-                      '3 DF 篠塚 祥貴',
-                      '4 DF 田中 希望',
-                      '5 DF 中野 拓人',
-                      '6 MF 尾藤 凌太',
-                      '7 FW 床次 洸樹',
-                      '8 MF 池田 朋矢',
-                      '9 MF 丹生 惇也',
-                      '10 DF 西本 蓮',
-                      '11 FW 香田 悠汰',
-                      '12 GK 末松 晃',
-                      '13 GK 河野 晃大',
-                      '14 MF 小野 航平',
-                      '15 DF 寺川 正太郎',
-                      '16 DF 國澤 颯太',
-                      '17 MF 泉 剛史',
-                      '18 MF 床次 伶太',
-                      '19 MF 山口 航',
-                      '20 MF 仲里 凌司',
-                      '21 GK 坂ノ上 拓',
-                      '22 MF 馬越 遥也',
-                      '23 FW 坂ノ上 快',
-                      '24 FW 大野 晟嗣',
-                      '25 FW 宮本 才蔵',
-                      '26 MF 池田 泰陽',
-                      '27 MF 新澤津 壮真',
-                      '28 DF 高木 大成',
-                      '29 MF 猪俣 祐太',
-                      '30 DF 田上 靖琉',
-                      '31 MF 中原 真吾',
-                      '43 MF 林田 遼眞'], 
-                     {include_blank: '選択ボックス',
-                     multiple: true},
-                     class: 'sample' %><br>
-    <%= form.label :サブ %>
-    <%= form.select :Substitute, 
-                     ['1 GK 江口 太朗', 
-                      '2 DF	山下 拓海', 
-                      '3 DF 篠塚 祥貴',
-                      '4 DF 田中 希望',
-                      '5 DF 中野 拓人',
-                      '6 MF 尾藤 凌太',
-                      '7 FW 床次 洸樹',
-                      '8 MF 池田 朋矢',
-                      '9 MF 丹生 惇也',
-                      '10 DF 西本 蓮',
-                      '11 FW 香田 悠汰',
-                      '12 GK 末松 晃',
-                      '13 GK 河野 晃大',
-                      '14 MF 小野 航平',
-                      '15 DF 寺川 正太郎',
-                      '16 DF 國澤 颯太',
-                      '17 MF 泉 剛史',
-                      '18 MF 床次 伶太',
-                      '19 MF 山口 航',
-                      '20 MF 仲里 凌司',
-                      '21 GK 坂ノ上 拓',
-                      '22 MF 馬越 遥也',
-                      '23 FW 坂ノ上 快',
-                      '24 FW 大野 晟嗣',
-                      '25 FW 宮本 才蔵',
-                      '26 MF 池田 泰陽',
-                      '27 MF 新澤津 壮真',
-                      '28 DF 高木 大成',
-                      '29 MF 猪俣 祐太',
-                      '30 DF 田上 靖琉',
-                      '31 MF 中原 真吾',
-                      '43 MF 林田 遼眞'], 
-                     {include_blank: '選択ボックス'}, 
-                     class: 'sample' %><br>
+    <%= form.label :スタメン %><br>
+    <% for i in 1..11 %>
+      <%= form.select :Starting, @members, {include_blank: '選択ボックス'} %><br>
+    <% end %>
+    <%= form.label :サブ %><br>
+    <% for i in 1..9 %>
+      <%= form.select :Substitute, @members, {include_blank: '選択ボックス'} %><br>
+    <% end %>
     <% if @match.errors.any? %>
         <% @match.errors.full_messages.each do |message| %>
           <li><%= message %></li>
