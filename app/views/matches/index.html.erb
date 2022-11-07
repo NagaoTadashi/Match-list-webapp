@@ -1,5 +1,15 @@
-<h1>試合一覧</h1>
-<%= link_to '新規' , new_match_path %>
+<h1 class="title">試合一覧</h1>
+<%= link_to new_match_path do %>
+  <div class="btn btn--orange btn--radius">新規</div>
+<% end %>
+
+<div class="flex_test-box">
+    <div class="flex_test-item">節</div>
+    <div class="flex_test-item">日時</div>
+    <div class="flex_test-item">会場</div>
+    <div class="flex_test-item">対戦相手</div>
+    <div class="flex_test-item">試合結果</div>
+</div>
 <ul>
   <% @matches.each do | games | %> 
   <li>
