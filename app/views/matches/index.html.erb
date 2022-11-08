@@ -1,26 +1,44 @@
-<h1 class="title">試合一覧</h1>
-<%= link_to new_match_path do %>
-  <div class="btn btn--orange btn--radius">新規</div>
-<% end %>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>試合一覧画面</title>
+</head>
 
-<div class="flex_test-box">
-    <div class="flex_test-item">節</div>
-    <div class="flex_test-item">日時</div>
-    <div class="flex_test-item">会場</div>
-    <div class="flex_test-item">対戦相手</div>
-    <div class="flex_test-item">試合結果</div>
-</div>
-<ul>
-  <% @matches.each do | games | %> 
-  <li>
-    <%= games.Sec %>
-    <%= games.Date %>
-    <%= games.Venue %>
-    <%= games.Oppnent %>
-    <%= link_to '[詳細]',match_path(games) %>
-    <%= link_to '[編集]',edit_match_path(games) %>
-    <%= link_to '[消去]',match_path(games),
-      data: {turbo_method: 'delete',turbo_confirm: 'Are you sure?'} %>
-  </li>
-  <% end %>
-</ul>
+<body>
+  <h1>試合一覧</h1>
+
+  <a href="/matches/new" class="btn btn--orange btn--radius">新規作成</a>
+  
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">節</th>
+        <th scope="col">日時</th>
+        <th scope="col">会場</th>
+        <th scope="col">対戦相手</th>
+        <th scope="col">試合結果</th>
+        <th scope="col">詳細</th>
+        <th scope="col">編集</th>
+        <th scope="col">消去</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @matches.each do | games | %> 
+        <tr>
+          <td><%= games.Sec %></td>
+          <td><%= games.Date %></td>
+          <td><%= games.Venue %></td>
+          <td><%= games.Oppnent %></td>
+          <td><%= games.Score %></td>
+          <td><%= link_to '[詳細]',match_path(games) %></td>
+          <td><%= link_to '[編集]',edit_match_path(games) %></td>
+          <td><%= link_to '[消去]',match_path(games),data: {turbo_method: 'delete',turbo_confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
