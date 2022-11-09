@@ -24,3 +24,70 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+
+
+<form class="form" action="#" method="post">
+  
+  <div class="item">
+    <label class="label_left" for="Sec">節</label>
+    <input id="Sec" type="text" placeholder="入力してください" value=<%= @match.Sec %> required><br>
+  </div>
+
+  <div class="item">
+    <label class="label_left" for="Date">日時</label>
+    <input id="age" type="text" placeholder="入力してください" value=<%= @match.Date %> required><br>
+  </div>
+
+  <div class="item">
+    <label  class="label_left" for="Venue">会場</label>
+    <input id="email" type="text" placeholder="入力してください" value=<%= @match.Venue %> required><br>
+  </div>
+
+  <div class="item">
+    <label class="label_left" for="Oppnent">対戦相手</label>
+    <input id="password" type="text" placeholder="入力してください" value=<%= @match.Oppnent %> required><br>
+  </div>
+ 
+  <div class="item">
+    <label class="label_left" for="Score">試合結果</label>
+    <input id="password" type="text" placeholder="入力してください" value=<%= @match.Score %> required><br>
+  </div>
+  
+  <% for i in 1..11 %>
+    <div class="item">
+      <% if i==1 %>
+        <label  class="label_left"　for="prefecture">スタメン</label>
+      <% else %>
+        <label  class="label_left"　for="prefecture"></label>
+      <% end %>
+      <select name="prefecture" id="prefecture">
+        <% for i in @members %>
+          <option value="a" selected=<%= @match.Starting3 %>><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+  <% end %>
+  
+  <% for i in 1..9 %>
+    <div class="item">
+      <% if i==1 %>
+        <label  class="label_left"　for="prefecture">サブ</label>
+      <% else %>
+        <label  class="label_left"　for="prefecture"></label>
+      <% end %>
+      <select name="prefecture" id="prefecture">
+        <% for i in @members %>
+          <option value=<% i %>><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+  <% end %>
+
+  <div class="btns">
+    <input type="submit" value="登録"><br>
+    <input type="reset" value="リセット">
+  </div>
+ 
+ 
+ </form>
