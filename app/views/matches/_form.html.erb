@@ -1,93 +1,57 @@
-<p><%= link_to "戻る", :back %></p>
-<%= form_with model: @match do |form| %>
-  <p>
-    <%= form.label :節 %><br>
-    <%= form.text_field :Sec %><br>
-    <%= form.label :日時%><br>
-    <%= form.text_field :Date %><br>
-    <%= form.label :会場 %><br>
-    <%= form.text_field :Venue %><br>
-    <%= form.label :対戦チーム %><br>
-    <%= form.text_field :Oppnent %><br>
-    <%= form.label :試合結果 %><br>
-    <%= form.text_field :Score %><br>
-    <%= form.label :スタメン %><br>
-    <% for i in 1..11 %>
-      <%= form.select :"Starting#{i}", @members, {include_blank: '選択してください'} %><br>
-    <% end %>
-    <%= form.label :サブ %><br>
-    <% for i in 1..9 %>
-      <%= form.select :"Substitute#{i}", @members, {include_blank: '選択してください'} %><br>
-    <% end %>    
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<a href="/matches" class="btn btn--orange btn--radius">戻る</a>
 
-
-
-<form class="form" action="#" method="post">
-  
-  <div class="item">
-    <label class="label_left" for="Sec">節</label>
-    <input id="Sec" type="text" placeholder="入力してください" value=<%= @match.Sec %> required><br>
-  </div>
-
-  <div class="item">
-    <label class="label_left" for="Date">日時</label>
-    <input id="age" type="text" placeholder="入力してください" value=<%= @match.Date %> required><br>
-  </div>
-
-  <div class="item">
-    <label  class="label_left" for="Venue">会場</label>
-    <input id="email" type="text" placeholder="入力してください" value=<%= @match.Venue %> required><br>
-  </div>
-
-  <div class="item">
-    <label class="label_left" for="Oppnent">対戦相手</label>
-    <input id="password" type="text" placeholder="入力してください" value=<%= @match.Oppnent %> required><br>
-  </div>
- 
-  <div class="item">
-    <label class="label_left" for="Score">試合結果</label>
-    <input id="password" type="text" placeholder="入力してください" value=<%= @match.Score %> required><br>
-  </div>
-  
-  <% for i in 1..11 %>
-    <div class="item">
-      <% if i==1 %>
-        <label  class="label_left"　for="prefecture">スタメン</label>
-      <% else %>
-        <label  class="label_left"　for="prefecture"></label>
-      <% end %>
-      <select name="prefecture" id="prefecture">
-        <% for i in @members %>
-          <option value="a" selected=<%= @match.Starting3 %>><%= i %></option>
+<div class="form">
+  <%= form_with model: @match do |form| %>
+      <div class="item">
+        <label class="label_left" for="Sec">節</label>
+        <%= form.text_field :Sec %><br>
+      </div>
+      
+      <div class="item">
+        <label class="label_left" for="Date">日時</label>
+        <%= form.text_field :Date %><br>
+      </div>  
+      
+      <div class="item">
+        <label class="label_left" for="Venue">会場</label>
+        <%= form.text_field :Venue %><br>
+      </div>
+      
+      <div class="item">
+        <label class="label_left" for="Oppnent">対戦チーム</label>
+        <%= form.text_field :Oppnent %><br>
+      </div>
+      
+      <div class="item">
+        <label class="label_left" for="Score">試合結果</label>
+        <%= form.text_field :Score %><br>
+      </div>
+      
+      <div class="item">
+        <% for i in 1..11 %>
+          <% if i==1 %>
+            <label  class="label_left"　for="prefecture">スタメン</label>
+          <% else %>
+            <label  class="label_left"　for="prefecture"></label>
+          <% end %>
+            <%= form.select :"Starting#{i}", @members, {include_blank: '選択してください'} %><br>
         <% end %>
-      </select>
-    </div>
-  <% end %>
+      </div>
+      
+      <div class="item">
+        <% for i in 1..9 %>
+          <% if i==1 %>
+            <label  class="label_left"　for="prefecture">サブ</label>
+          <% else %>
+            <label  class="label_left"　for="prefecture"></label>
+          <% end %>
+          <%= form.select :"Substitute#{i}", @members, {include_blank: '選択してください'} %><br>
+        <% end %> 
+      </div>
   
-  <% for i in 1..9 %>
-    <div class="item">
-      <% if i==1 %>
-        <label  class="label_left"　for="prefecture">サブ</label>
-      <% else %>
-        <label  class="label_left"　for="prefecture"></label>
-      <% end %>
-      <select name="prefecture" id="prefecture">
-        <% for i in @members %>
-          <option value=<% i %>><%= i %></option>
-        <% end %>
-      </select>
-    </div>
+      <div class="btns">
+        <%= form.submit %>
+      </dv>
   <% end %>
+</div>
 
-  <div class="btns">
-    <input type="submit" value="登録"><br>
-    <input type="reset" value="リセット">
-  </div>
- 
- 
- </form>
