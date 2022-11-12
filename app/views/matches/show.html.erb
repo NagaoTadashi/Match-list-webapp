@@ -1,28 +1,64 @@
-<h1>試合情報</h1>
-<p><%= link_to "戻る", :back %></p>
-<h2>2022九州大学サッカーリーグ<%= @match.Sec %> vs <%= @match.Oppnent %></h2>
-<p><%= @match.Date %></p>
-<p><%= @match.Venue %></p>
-<p>熊本大学<%= @match.Score %><%= @match.Oppnent %></p>
-<p>STARTING MEMBER</p>
-<%= @match.Starting1 %><br>
-<%= @match.Starting2 %><br>
-<%= @match.Starting3 %><br>
-<%= @match.Starting4 %><br>
-<%= @match.Starting5 %><br>
-<%= @match.Starting6 %><br>
-<%= @match.Starting7 %><br>
-<%= @match.Starting8 %><br>
-<%= @match.Starting9 %><br>
-<%= @match.Starting10 %><br>
-<%= @match.Starting11 %><br>
-<p>SUBSTITUTE MEMBER</p>
-<%= @match.Substitute1 %><br>
-<%= @match.Substitute2 %><br>
-<%= @match.Substitute3 %><br>
-<%= @match.Substitute4 %><br>
-<%= @match.Substitute5 %><br>
-<%= @match.Substitute6 %><br>
-<%= @match.Substitute7 %><br>
-<%= @match.Substitute8 %><br>
-<%= @match.Substitute9 %><br>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>試合一覧画面</title>
+</head>
+
+<body>
+  <h1>試合情報</h1>
+  
+  <a href="/matches" class="btn btn--orange btn--radius">戻る</a>
+  
+  <h2 class="heading03">2022九州大学サッカーリーグ<%= @match.Sec %> vs <%= @match.Oppnent %></h2>
+  
+  <p><%= @match.Date %></p>
+  <p><%= @match.Venue %></p>
+  <p>熊本大学<%= @match.Score %><%= @match.Oppnent %></p>
+  
+  <div class="container">
+    <div class="box">
+      <table class="table" align="left">
+        <thead>
+          <th scope"col1">STARTING MEMBER</th>
+        </thead>
+        <tbody>
+          <tr><td><%= @match.Starting1 %></td></tr>
+          <tr><td><%= @match.Starting2 %></td></tr>
+          <tr><td><%= @match.Starting3 %></td></tr>
+          <tr><td><%= @match.Starting4 %></td></tr>
+          <tr><td><%= @match.Starting5 %></td></tr>
+          <tr><td><%= @match.Starting6 %></td></tr>
+          <tr><td><%= @match.Starting7 %></td></tr>
+          <tr><td><%= @match.Starting8 %></td></tr>
+          <tr><td><%= @match.Starting9 %></td></tr>
+          <tr><td><%= @match.Starting10 %></td></tr>
+          <tr><td><%= @match.Starting11 %></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="box">
+      <table class="table">
+        <thead>
+          <th scope"col1">SUBSTITUTE MEMBER</th>
+        </thead>
+        <tbody>
+          <tr><td><%= @match.Substitute1 %></td></tr>
+          <tr><td><%= @match.Substitute2 %></td></tr>
+          <tr><td><%= @match.Substitute3 %></td></tr>
+          <tr><td><%= @match.Substitute4 %></td></tr>
+          <tr><td><%= @match.Substitute5 %></td></tr>
+          <tr><td><%= @match.Substitute6 %></td></tr>
+          <tr><td><%= @match.Substitute7 %></td></tr>
+          <tr><td><%= @match.Substitute8 %></td></tr>
+          <tr><td><%= @match.Substitute9 %></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
