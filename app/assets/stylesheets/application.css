@@ -27,6 +27,21 @@ h1 {
   text-align: center;
 }
 
+.date{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.venue{
+  text-align: center;
+}
+
+.score{
+  font-size: 50px;
+  margin: 30px;
+  text-align: center;
+}
+
 .heading03 {
 	display: flex;
 	justify-content: center;
@@ -51,18 +66,23 @@ h1 {
 }
 
 /*テーブル*/
-.table{
-  text-align: center;
-  width: 100%;
+.th{
+  font-size: 20px;
 }
 
-.container {
+.flex_test-box {
+    padding:  10px;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
 }
-
-.box {
-    text-align: center;
+ 
+.flex_test-item {
+  text-align: center;
+    padding: 10px;
+    margin:  10px;
+    border-radius:  5px;
+    width: 35%;  
+    letter-spacing: 1px;
 }
 
 /*ボタン*/
@@ -169,3 +189,4 @@ a.btn--radius {
    padding: 10px 20px;
    margin: 0 5px;
  }
+ 

@@ -15,15 +15,15 @@
   
   <h2 class="heading03">2022九州大学サッカーリーグ<%= @match.Sec %> vs <%= @match.Oppnent %></h2>
   
-  <p><%= @match.Date %></p>
-  <p><%= @match.Venue %></p>
-  <p>熊本大学<%= @match.Score %><%= @match.Oppnent %></p>
+  <h4 class="date"><%= @match.Date %></h4>
+  <h4 class="venue"><%= @match.Venue %></h4>
+  <h3 class="score">熊本大学<%= @match.Score %><%= @match.Oppnent %></h3>
   
-  <div class="container">
-    <div class="box">
-      <table class="table" align="left">
+  <div class="flex_test-box">
+    <div class="flex_test-item">
+      <table class="table table-striped">
         <thead>
-          <th scope"col1">STARTING MEMBER</th>
+          <th scope"col1" class="th">STARTING MEMBER</th>
         </thead>
         <tbody>
           <tr><td><%= @match.Starting1 %></td></tr>
@@ -40,11 +40,11 @@
         </tbody>
       </table>
     </div>
-    
-    <div class="box">
-      <table class="table">
+  
+    <div class="flex_test-item">  
+      <table class="table table-striped">
         <thead>
-          <th scope"col1">SUBSTITUTE MEMBER</th>
+          <th scope"col1" class="th">SUBSTITUTE MEMBER</th>
         </thead>
         <tbody>
           <tr><td><%= @match.Substitute1 %></td></tr>
@@ -60,5 +60,5 @@
       </table>
     </div>
   </div>
-
+  
 </body>
