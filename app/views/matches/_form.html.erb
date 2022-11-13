@@ -1,57 +1,69 @@
-<a href="/matches" class="btn btn--orange btn--radius">戻る</a>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>フォーム画面</title>
+</head>
 
-<div class="form">
-  <%= form_with model: @match do |form| %>
-      <div class="item">
-        <label class="label_left" for="Sec">節</label>
-        <%= form.text_field :Sec %><br>
-      </div>
-      
-      <div class="item">
-        <label class="label_left" for="Date">日時</label>
-        <%= form.text_field :Date %><br>
-      </div>  
-      
-      <div class="item">
-        <label class="label_left" for="Venue">会場</label>
-        <%= form.text_field :Venue %><br>
-      </div>
-      
-      <div class="item">
-        <label class="label_left" for="Oppnent">対戦チーム</label>
-        <%= form.text_field :Oppnent %><br>
-      </div>
-      
-      <div class="item">
-        <label class="label_left" for="Score">試合結果</label>
-        <%= form.text_field :Score %><br>
-      </div>
-      
-      <div class="item">
-        <% for i in 1..11 %>
-          <% if i==1 %>
-            <label  class="label_left"　for="prefecture">スタメン</label>
-          <% else %>
-            <label  class="label_left"　for="prefecture"></label>
-          <% end %>
-            <%= form.select :"Starting#{i}", @members, {include_blank: '選択してください'} %><br>
-        <% end %>
-      </div>
-      
-      <div class="item">
-        <% for i in 1..9 %>
-          <% if i==1 %>
-            <label  class="label_left"　for="prefecture">サブ</label>
-          <% else %>
-            <label  class="label_left"　for="prefecture"></label>
-          <% end %>
-          <%= form.select :"Substitute#{i}", @members, {include_blank: '選択してください'} %><br>
-        <% end %> 
-      </div>
+<body>
+  <a href="/matches" class="btn btn--orange btn--radius">戻る</a>
   
-      <div class="btns">
-        <%= form.submit %>
-      </dv>
-  <% end %>
-</div>
+  <div class="form">
+    <%= form_with model: @match do |form| %>
+        <div class="item">
+          <label class="label_left" for="Sec">節</label>
+          <%= form.text_field :Sec %><br>
+        </div>
+        
+        <div class="item">
+          <label class="label_left" for="Date">日時</label>
+          <%= form.text_field :Date %><br>
+        </div>  
+        
+        <div class="item">
+          <label class="label_left" for="Venue">会場</label>
+          <%= form.text_field :Venue %><br>
+        </div>
+        
+        <div class="item">
+          <label class="label_left" for="Oppnent">対戦チーム</label>
+          <%= form.text_field :Oppnent %><br>
+        </div>
+        
+        <div class="item">
+          <label class="label_left" for="Score">試合結果</label>
+          <%= form.text_field :Score %><br>
+        </div>
+        
+        <div class="item">
+          <% for i in 1..11 %>
+            <% if i==1 %>
+              <label  class="label_left"　for="prefecture">スタメン</label>
+            <% else %>
+              <label  class="label_left"　for="prefecture"></label>
+            <% end %>
+              <%= form.select :"Starting#{i}", @members, {include_blank: '選択してください'} %><br>
+          <% end %>
+        </div>
+        
+        <div class="item">
+          <% for i in 1..9 %>
+            <% if i==1 %>
+              <label  class="label_left"　for="prefecture">サブ</label>
+            <% else %>
+              <label  class="label_left"　for="prefecture"></label>
+            <% end %>
+            <%= form.select :"Substitute#{i}", @members, {include_blank: '選択してください'} %><br>
+          <% end %> 
+        </div>
+    
+        <div class="btns">
+          <%= form.submit %>
+        </dv>
+    <% end %>
+  </div>
+</body>
 

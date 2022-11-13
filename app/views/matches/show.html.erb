@@ -5,7 +5,7 @@
  
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>試合一覧画面</title>
+    <title>試合詳細画面</title>
 </head>
 
 <body>
@@ -13,17 +13,22 @@
   
   <a href="/matches" class="btn btn--orange btn--radius">戻る</a>
   
-  <h2 class="heading03">2022九州大学サッカーリーグ<%= @match.Sec %> vs <%= @match.Oppnent %></h2>
+  <h2 class="heading03">2022九州大学サッカー2部リーグ<%= @match.Sec %></h2>
   
   <h4 class="date"><%= @match.Date %></h4>
   <h4 class="venue"><%= @match.Venue %></h4>
-  <h3 class="score">熊本大学<%= @match.Score %><%= @match.Oppnent %></h3>
+  
+  <div class="container">
+    <div class="box">熊本大学</div>
+    <div class="box"><%= @match.Score %></div>
+    <div class="box"><%= @match.Oppnent %></div>
+  </div>
   
   <div class="flex_test-box">
     <div class="flex_test-item">
       <table class="table table-striped">
         <thead>
-          <th scope"col1" class="th">STARTING MEMBER</th>
+          <th scope="col">STARTING MEMBER</th>
         </thead>
         <tbody>
           <tr><td><%= @match.Starting1 %></td></tr>
@@ -44,7 +49,7 @@
     <div class="flex_test-item">  
       <table class="table table-striped">
         <thead>
-          <th scope"col1" class="th">SUBSTITUTE MEMBER</th>
+          <th scope="col">SUBSTITUTE MEMBER</th>
         </thead>
         <tbody>
           <tr><td><%= @match.Substitute1 %></td></tr>
