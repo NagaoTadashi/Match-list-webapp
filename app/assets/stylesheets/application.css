@@ -76,6 +76,9 @@ h1 {
 }
 
 /*テーブル*/
+.indextable{
+  text-align: center;
+}
 .flex_test-box {
   padding:  10px;
   display: flex;
