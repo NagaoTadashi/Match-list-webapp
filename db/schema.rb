@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_01_120807) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_17_072232) do
   create_table "matches", force: :cascade do |t|
     t.string "Sec"
     t.string "Date"
@@ -39,6 +39,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_120807) do
     t.string "Substitute7"
     t.string "Substitute8"
     t.string "Substitute9"
+    t.string "fome"
+    t.string "checklist"
+    t.string "loss"
   end
 
 end

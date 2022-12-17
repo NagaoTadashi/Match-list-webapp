@@ -59,6 +59,11 @@
             <%= form.select :"Substitute#{i}", @members, {include_blank: '選択してください'} %><br>
           <% end %> 
         </div>
+        
+        <div>
+          <label class="label_left" for="Oppnent">相手のフォーメーション</label>
+          <%= form.text_field :Oppnent %><br>          
+        </div>
     
         <div class="btns">
           <%= form.submit %>

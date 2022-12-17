@@ -43,7 +43,8 @@ class MatchesController < ApplicationController
                                   :Starting1,:Starting2,:Starting3,:Starting4,:Starting5,
                                   :Starting6,:Starting7,:Starting8,:Starting9,:Starting10,
                                   :Starting11,:Substitute1,:Substitute2,:Substitute3,:Substitute4,
-                                  :Substitute5,:Substitute6,:Substitute7,:Substitute8,:Substitute9)
+                                  :Substitute5,:Substitute6,:Substitute7,:Substitute8,:Substitute9,
+                                  :fome,:checklist,:loss)
   end  
   
   def memberslist
