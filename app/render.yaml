@@ -1,5 +1,5 @@
 databases:
-  - name: dpg-cefgeesgqg4b3hb32sc0-a
+  - name: matchlistDB
     databaseName: messi10iniesta8
     user: tadashi
     region: singapore
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: dpg-cefgeesgqg4b3hb32sc0-a
+          name: matchlistDB
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
