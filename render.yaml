@@ -1,12 +1,12 @@
 databases:
-  - name: rails7_sample_staging
-    databaseName: rails7_sample_staging
-    user: rails7_sample
+  - name: dpg-cefgeesgqg4b3hb32sc0-a
+    databaseName: messi10iniesta8
+    user: tadashi
     region: singapore
 
 services:
   - type: web
-    name: rails7-sample-staging
+    name: matchlist
     env: ruby
     region: singapore
     plan: free
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: rails7_sample_staging
+          name: dpg-cefgeesgqg4b3hb32sc0-a
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
