@@ -60,11 +60,21 @@
           <% end %> 
         </div>
         
-        <div>
-          <label class="label_left" for="Oppnent">相手のフォーメーション</label>
-          <%= form.text_field :Oppnent %><br>          
+        <div class="item">
+          <label class="label_left" for="fome">相手のフォーメーション</label>
+          <%= form.text_field :fome %><br>          
         </div>
-    
+
+        <div class="item">
+          <label class="label_left" for="checklist">確認事項</label>
+          <%= form.text_area :checklist %><br>          
+        </div>
+
+        <div class="item">
+          <label class="label_left" for="loss">失点の仕方</label>
+          <%= form.text_area :loss %><br>          
+        </div>
+                
         <div class="btns">
           <%= form.submit %>
         </dv>
